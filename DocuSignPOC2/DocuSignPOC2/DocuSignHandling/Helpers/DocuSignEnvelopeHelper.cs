@@ -1,10 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DocuSign.eSign.Model;
+﻿using DocuSign.eSign.Model;
 
 namespace DocuSignPOC2.DocuSignHandling.Helpers
 {
@@ -22,6 +16,7 @@ namespace DocuSignPOC2.DocuSignHandling.Helpers
 
                 EventNotification = new EventNotification()
                 {
+                    Url = notifcationUri,
                     DeliveryMode = "SIM",
                     EventData = new ConnectEventData() { Version = "restv2.1" },
                     Events = new List<string>()
