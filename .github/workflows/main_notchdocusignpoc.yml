@@ -26,7 +26,7 @@ jobs:
         run: dotnet build DocuSignPOC2/DocuSignPOC2.sln -c Release -o ${{env.DOTNET_ROOT}}/DocuSignPOC2
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/DocuSignPOC2
+        run: dotnet publish DocuSignPOC2/DocuSignPOC2.sln -c Release -o ${{env.DOTNET_ROOT}}/DocuSignPOC2
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
