@@ -7,13 +7,22 @@ namespace DocuSignPOC2.DocuSignHandling.Helpers
         public static EnvelopeDefinition MakeEnvelope(string emailSubject, string agentEmail, string agentName,
             string producerEmail, string producerName, List<Document> docuSignDocuments, string notifcationUri, bool? useDefaultDocuments = true)
         {
+   //         DateTime salesEffectiveDate = new(2023, 2, 6);
 
+			//var expiryDate = salesEffectiveDate.AddDays(1).AddHours(9);
+
+			//if (salesEffectiveDate.Day < DateTime.Now.Day)
+   //         {
+   //             expiryDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 9, 0, 0);
+   //         }
+
+            
             var envelopeDefinition = new EnvelopeDefinition()
             {
                 NotificationUri = notifcationUri,
                 Password = "test",
-
-
+				ExpireEnabled = "true",
+				ExpireDateTime = DateTime.Now.AddMinutes(10).ToString(),
                 EventNotification = new EventNotification()
                 {
                     Url = notifcationUri,
