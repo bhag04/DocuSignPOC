@@ -22,7 +22,7 @@ namespace DocuSignPOC2.DocuSignHandling.Helpers
                 NotificationUri = notifcationUri,
                 Password = "test",
 				ExpireEnabled = "true",
-				ExpireDateTime = DateTime.Now.AddMinutes(10).ToString(),
+				ExpireDateTime = DateTime.UtcNow.AddMinutes(10).ToString(),
                 EventNotification = new EventNotification()
                 {
                     Url = notifcationUri,
@@ -38,7 +38,8 @@ namespace DocuSignPOC2.DocuSignHandling.Helpers
                     "recipient-delivered",
                     "recipient-completed",
                     "recipient-sent",
-                    "template-modified"
+                    "template-modified",
+                    "envelope-voided"
                    }
                 },
                 Documents = docuSignDocuments.PrepareDocumentsForSigning(),
